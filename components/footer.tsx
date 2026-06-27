@@ -41,72 +41,74 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
-            <h4 className="mb-4 text-sm font-semibold text-white">
-              {t.footer.company}
-            </h4>
-            <ul className="space-y-3">
-              {companyLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-[#8a99ad] transition-colors hover:text-[#c5a880]"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:contents">
+            <div>
+              <h4 className="mb-4 text-sm font-semibold text-white">
+                {t.footer.company}
+              </h4>
+              <ul className="space-y-3">
+                {companyLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-[#8a99ad] transition-colors hover:text-[#c5a880]"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div>
-            <h4 className="mb-4 text-sm font-semibold text-white">
-              {t.footer.solutions}
-            </h4>
-            <ul className="space-y-3">
-              {solutionLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-[#8a99ad] transition-colors hover:text-[#c5a880]"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div>
+              <h4 className="mb-4 text-sm font-semibold text-white">
+                {t.footer.solutions}
+              </h4>
+              <ul className="space-y-3">
+                {solutionLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-[#8a99ad] transition-colors hover:text-[#c5a880]"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div>
-            <h4 className="mb-4 text-sm font-semibold text-white">
-              {t.footer.contact}
-            </h4>
-            <ul className="space-y-4">
-              <li>
-                <a
-                  href="mailto:partnerships@nexusharamain.com"
-                  className="flex items-start gap-3 text-sm text-[#8a99ad] transition-colors hover:text-[#c5a880]"
-                >
-                  <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#c5a880]" />
-                  partnerships@nexusharamain.com
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:+966110000000"
-                  className="flex items-start gap-3 text-sm text-[#8a99ad] transition-colors hover:text-[#c5a880]"
-                >
-                  <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[#c5a880]" />
-                  +966 (0) 11 000 0000
-                </a>
-              </li>
-              <li>
-                <span className="flex items-start gap-3 text-sm text-[#8a99ad]">
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#c5a880]" />
-                  King Fahd Road, Riyadh
-                </span>
-              </li>
-            </ul>
+            <div className="col-span-2 sm:col-span-1">
+              <h4 className="mb-4 text-sm font-semibold text-white">
+                {t.footer.contact}
+              </h4>
+              <ul className="space-y-4">
+                <li>
+                  <a
+                    href="mailto:partnerships@nexusharamain.com"
+                    className="flex items-start gap-3 text-sm text-[#8a99ad] transition-colors hover:text-[#c5a880]"
+                  >
+                    <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#c5a880]" />
+                    partnerships@nexusharamain.com
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="tel:+966110000000"
+                    className="flex items-start gap-3 text-sm text-[#8a99ad] transition-colors hover:text-[#c5a880]"
+                  >
+                    <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[#c5a880]" />
+                    +966 (0) 11 000 0000
+                  </a>
+                </li>
+                <li>
+                  <span className="flex items-start gap-3 text-sm text-[#8a99ad]">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#c5a880]" />
+                    King Fahd Road, Riyadh
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

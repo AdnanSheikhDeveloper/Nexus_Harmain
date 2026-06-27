@@ -101,6 +101,21 @@ html[dir="rtl"] .font-serif {
   letter-spacing: -0.025em;
 }
 
+/* Image banners & page heroes — override section-light heading colors */
+.image-banner h1,
+.image-banner h2,
+.image-banner h3,
+.page-hero h1,
+.page-hero h2,
+.page-hero h3 {
+  color: #ffffff;
+}
+
+.image-banner p,
+.page-hero p {
+  color: #c5d0de;
+}
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -125,6 +140,35 @@ html[dir="rtl"] .font-serif {
 .card-equal-footer {
   margin-top: auto;
   padding-top: 1rem;
+}
+
+/* Mobile horizontal scroll card sizing (< md) */
+@media (max-width: 767px) {
+  /* Premium services — fixed equal card size */
+  .mobile-service-scroll > .mobile-service-card {
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    height: 29rem;
+    min-height: 29rem;
+    max-height: 29rem;
+    flex-shrink: 0;
+  }
+
+  .mobile-service-scroll > .mobile-service-card .card-equal-body {
+    min-height: 0;
+  }
+
+  /* Why Nexus — fixed equal card size on mobile */
+  .mobile-why-scroll > .mobile-why-card {
+    width: 280px;
+    min-width: 280px;
+    max-width: 280px;
+    height: 18rem;
+    min-height: 18rem;
+    max-height: 18rem;
+    flex-shrink: 0;
+  }
 }
 
 .stat-card {
@@ -154,22 +198,4 @@ html[dir="rtl"] .font-serif {
   border-radius: 0.75rem;
   background: rgba(3, 15, 38, 0.04);
   border: 1px solid rgba(197, 168, 128, 0.25);
-}
-
-.partnership-card {
-  border: 1px solid rgba(15, 26, 46, 0.08);
-  box-shadow: 0 24px 64px rgba(3, 15, 38, 0.2);
-  min-height: 22rem;
-}
-
-@media (min-width: 640px) {
-  .partnership-card {
-    min-height: 26rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .partnership-card {
-    min-height: 30rem;
-  }
 }

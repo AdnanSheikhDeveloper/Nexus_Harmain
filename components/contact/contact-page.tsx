@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { ArrowRight, Clock, Mail, MapPin, Phone } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
+import PageHero from "@/components/page-hero";
+import { images } from "@/lib/images";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -41,19 +43,15 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="section-light border-b border-[#0f1a2e]/10 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-          <p className="section-overtitle section-overtitle-light mb-4">
-            {c.overtitle}
-          </p>
-          <h1 className="section-heading mb-6 max-w-3xl text-4xl font-bold text-[#0f1a2e] sm:text-5xl">
-            {c.title}
-          </h1>
-          <p className="max-w-2xl text-lg leading-relaxed text-[#5a6478]">
-            {c.description}
-          </p>
-        </div>
-      </section>
+      <PageHero image={images.business} alt="Partnership consultation">
+        <p className="section-overtitle mb-4">{c.overtitle}</p>
+        <h1 className="section-heading mb-6 max-w-3xl text-4xl font-bold sm:text-5xl">
+          {c.title}
+        </h1>
+        <p className="max-w-2xl text-lg leading-relaxed">
+          {c.description}
+        </p>
+      </PageHero>
 
       <section className="section-dark bg-[#030f26] py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

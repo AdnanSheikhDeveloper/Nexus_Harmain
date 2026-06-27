@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
+import ImageBanner from "@/components/image-banner";
+import PageHero from "@/components/page-hero";
 import { images } from "@/lib/images";
 
 const serviceMeta: {
@@ -173,26 +175,15 @@ export default function ServicesPage() {
 
   return (
     <>
-      <section className="relative overflow-hidden section-dark bg-[#030f26]">
-        <div className="absolute inset-0">
-          <Image
-            src={images.business}
-            alt="Business exhibition"
-            fill
-            className="object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#030f26]/80 to-[#030f26]" />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-          <p className="section-overtitle mb-4">{s.overtitle}</p>
-          <h1 className="section-heading mb-6 max-w-3xl text-4xl font-bold text-white sm:text-5xl">
-            {s.title}
-          </h1>
-          <p className="max-w-2xl text-lg leading-relaxed text-[#8a99ad]">
-            {s.description}
-          </p>
-        </div>
-      </section>
+      <PageHero image={images.business} alt="Business partnership meeting">
+        <p className="section-overtitle mb-4">{s.overtitle}</p>
+        <h1 className="section-heading mb-6 max-w-3xl text-4xl font-bold sm:text-5xl">
+          {s.title}
+        </h1>
+        <p className="max-w-2xl text-lg leading-relaxed">
+          {s.description}
+        </p>
+      </PageHero>
 
       <section className="section-light bg-white py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -210,14 +201,14 @@ export default function ServicesPage() {
                       index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
                     }`}
                   >
-                    <div className="relative h-72 overflow-hidden rounded-2xl nexus-border-light sm:h-96">
+                    <div className="relative h-72 overflow-hidden rounded-2xl border border-[#0f1a2e]/10 sm:h-96">
                       <Image
                         src={service.image}
                         alt={title}
                         fill
-                        className="object-cover"
+                        className="object-cover object-center"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#030f26]/60 to-transparent" />
                     </div>
 
                     <div>
@@ -285,32 +276,27 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section-light bg-white py-24">
+      <section className="bg-[#f4f6f9] py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="partnership-card relative overflow-hidden rounded-3xl">
-            <Image
-              src={images.mosqueNight}
-              alt="Illuminated mosque"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#030f26]/95 via-[#030f26]/85 to-[#030f26]/70" />
-            <div className="relative px-8 py-16 text-center sm:px-16">
-              <h2 className="section-heading mb-4 text-3xl font-bold text-white">
-                {s.ctaTitle}
-              </h2>
-              <p className="mx-auto mb-8 max-w-xl text-white/80">
-                {s.ctaDescription}
-              </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-[#c5a880] px-6 py-3 text-sm font-medium text-[#030f26] transition-all hover:bg-[#dfc19b]"
-              >
-                {s.scheduleConsultation}
-                <ArrowRight className="h-4 w-4 rtl:rotate-180" />
-              </Link>
-            </div>
-          </div>
+          <ImageBanner
+            image={images.mosqueNight}
+            alt="Illuminated mosque at night"
+            align="center"
+          >
+            <h2 className="section-heading mb-4 max-w-2xl text-3xl font-bold sm:text-4xl">
+              {s.ctaTitle}
+            </h2>
+            <p className="mx-auto mb-8 max-w-xl text-base leading-relaxed sm:text-lg">
+              {s.ctaDescription}
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-[#c5a880] px-6 py-3 text-sm font-semibold text-[#030f26] transition-all hover:bg-[#dfc19b]"
+            >
+              {s.scheduleConsultation}
+              <ArrowRight className="h-4 w-4 rtl:rotate-180" />
+            </Link>
+          </ImageBanner>
         </div>
       </section>
     </>
