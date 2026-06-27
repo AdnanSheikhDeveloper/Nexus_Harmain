@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-nexus-bg: #030f26;
+  --color-nexus-card: #081736;
+  --color-nexus-gold: #c5a880;
+  --color-nexus-gold-light: #dfc19b;
+  --color-nexus-muted: #8a99ad;
+  --color-nexus-heading: #ffffff;
+  --font-serif: "Georgia", "Times New Roman", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-nexus-bg);
+  color: var(--color-nexus-muted);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-nexus-heading);
+}
+
+.glass-card {
+  background: rgba(8, 23, 54, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nexus-border {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.section-overtitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-nexus-gold);
+  font-weight: 600;
+}
+
+.section-heading {
+  font-family: var(--font-serif);
+  letter-spacing: -0.025em;
+}
