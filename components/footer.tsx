@@ -1,46 +1,50 @@
+"use client";
+
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
-
-const companyLinks = [
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/contact", label: "Contact" },
-];
-
-const solutionLinks = [
-  { href: "/services#hospitality", label: "Hospitality" },
-  { href: "/services#hajj-umrah", label: "Hajj & Umrah" },
-  { href: "/services#smart-pilgrim", label: "Smart Pilgrim Tech" },
-  { href: "/services#connectivity", label: "Connectivity" },
-];
+import { useLanguage } from "@/components/language-provider";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
+  const companyLinks = [
+    { href: "/about", label: t.footer.about },
+    { href: "/services", label: t.nav.services },
+    { href: "/contact", label: t.nav.contact },
+  ];
+
+  const solutionLinks = [
+    { href: "/services#hospitality", label: t.footer.hospitality },
+    { href: "/services#hajj-umrah", label: t.footer.hajjUmrah },
+    { href: "/services#smart-pilgrim", label: t.footer.smartPilgrim },
+    { href: "/services#connectivity", label: t.footer.connectivity },
+  ];
+
   return (
-    <footer className="border-t border-white/[0.08] bg-[#030f26]">
+    <footer className="border-t border-white/10 bg-[#030f26] section-dark">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Col 1: Brand */}
           <div>
             <div className="mb-4 flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-md bg-[#dfc19b] font-serif text-xl font-bold text-[#030f26]">
+              <div className="flex h-9 w-9 items-center justify-center rounded-md bg-[#030f26] border border-[#c5a880]/30 font-serif text-xl font-bold text-[#c5a880]">
                 N
               </div>
               <p className="font-serif text-lg font-semibold text-white">
-                Nexus Haramain
+                {t.brand.name}
               </p>
             </div>
             <p className="mb-6 text-sm leading-relaxed text-[#8a99ad]">
-              A strategic bridge between Saudi-based pilgrimage providers and
-              international buyers, missions, and institutions.
+              {t.footer.bio}
             </p>
-            <div className="inline-flex rounded-full border border-white/[0.08] bg-[#081736] px-4 py-2 text-xs text-[#8a99ad]">
-              Riyadh · Jeddah · Makkah · Madinah
+            <div className="inline-flex rounded-full nexus-border-dark bg-[#081736] px-4 py-2 text-xs text-[#8a99ad]">
+              {t.footer.cities}
             </div>
           </div>
 
-          {/* Col 2: Company */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold text-white">Company</h4>
+            <h4 className="mb-4 text-sm font-semibold text-white">
+              {t.footer.company}
+            </h4>
             <ul className="space-y-3">
               {companyLinks.map((link) => (
                 <li key={link.href}>
@@ -55,9 +59,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 3: Solutions */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold text-white">Solutions</h4>
+            <h4 className="mb-4 text-sm font-semibold text-white">
+              {t.footer.solutions}
+            </h4>
             <ul className="space-y-3">
               {solutionLinks.map((link) => (
                 <li key={link.href}>
@@ -72,9 +77,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4: Contact */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold text-white">Contact</h4>
+            <h4 className="mb-4 text-sm font-semibold text-white">
+              {t.footer.contact}
+            </h4>
             <ul className="space-y-4">
               <li>
                 <a
@@ -105,13 +111,24 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom tier */}
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 text-xs text-[#8a99ad] sm:flex-row sm:px-6 lg:px-8">
-          <p>© 2026 Nexus Haramain. All rights reserved.</p>
-          <p className="text-center sm:text-right">
-            Connecting Global Pilgrimage Demand with Saudi Excellence.
-          </p>
+          <p>{t.footer.copyright}</p>
+          <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-6">
+            <p className="text-center sm:text-right">{t.footer.tagline}</p>
+            <span className="hidden sm:inline text-white/20">|</span>
+            <p>
+              {t.footer.poweredBy}{" "}
+              <a
+                href="https://www.pandalabsdigital.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-[#c5a880] transition-colors hover:text-white"
+              >
+                {t.footer.pandaLabs}
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
